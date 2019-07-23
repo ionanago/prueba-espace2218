@@ -2,6 +2,8 @@ package accessodatos;
 
 import java.util.ArrayList;
 
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
+
 import modelos.Usuario;
 
 public class ColeccionUsuarios implements Crudable<Usuario> {
@@ -26,12 +28,17 @@ public class ColeccionUsuarios implements Crudable<Usuario> {
 		
 		return usuarios;
 	}
-
-	@Override
-	public Usuario getOne() {
+	
+	public boolean comprobarU(Usuario usuario) {
+		if(usuarios.contains(usuario)) {
+			usuario.setValido(true);
+		return true;}
+		return false;
 		
-		return null;
+		
 	}
+
+	
 
 	@Override
 	public void insertar(Usuario usuario) {
@@ -49,6 +56,12 @@ public class ColeccionUsuarios implements Crudable<Usuario> {
 	public void modificar(Usuario usuario) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Usuario getOne() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

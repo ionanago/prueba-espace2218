@@ -17,52 +17,63 @@ import negocio.LogicaNegocio;
 public class LoginServlet extends HttpServlet {
 	private static final String VISTAS_LOGIN_JSP = "/WEB-INF/vistas/login.jsp";
 	private static final String VISTAS_PRINCIPAL_JSP = "/WEB-INF/vistas/inicio.jsp";
+	private static final String VISTAS_USUARIO_JSP = "/PrincipalUsuarioServlet";
 	private static final long serialVersionUID = 1L;
-   
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		final RequestDispatcher requestDispatcherLogin = request.getRequestDispatcher(VISTAS_LOGIN_JSP);
 		final RequestDispatcher requestDispatcherPrincipal = request.getRequestDispatcher(VISTAS_PRINCIPAL_JSP);
-		//Recoger informaciÓN de la peticiÓN
+		final RequestDispatcher requestDispatcherPrincipalUsuario = request.getRequestDispatcher(VISTAS_USUARIO_JSP);
+		// Recoger informaciÓN de la peticiÓN
 		String nick = request.getParameter("usuario");
 		String password = request.getParameter("password");
-		
+
 		Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
-		
-		//Empaquetar en objeto del modelo
-		
-		if(usuario == null) {
+
+		// Empaquetar en objeto del modelo
+
+		if (usuario == null) {
 			try {
-				usuario = new Usuario(nick,password);
+				usuario = new Usuario(nick, password);
 			} catch (ModeloException e) {
 				requestDispatcherLogin.forward(request, response);
 				return;
 			}
 		}
-		
-		if(usuario.isValido()) {
+
+		if (usuario.isValido()) {
 			request.setAttribute("usuario", usuario);
 			requestDispatcherLogin.forward(request, response);
 			return;
 		}
-		//Ejecutar l�gica de negocio
-		if(LogicaNegocio.isAutenticado(usuario)) {
-			//Redireccionar a un controlador
+		// Ejecutar l�gica de negocio
+		if (LogicaNegocio.isAutenticado(usuario)) {
+			// Redireccionar a un controlador
 			request.getSession().setAttribute("usuario", usuario);
-			requestDispatcherPrincipal.forward(request, response);
-			
+			String valusuario = usuario.getUsuario();
+			if (valusuario.equals("admin") ) {
+				requestDispatcherPrincipal.forward(request, response);
+				usuario.setValido(true);
+				return;
+			}
+			requestDispatcherPrincipalUsuario.forward(request, response);
+			usuario.setValido(true);
+
 			return;
-		}else {
-			//Redireccionar a una vista
+		} else {
+			// Redireccionar a una vista
 			usuario.setErrorAll("Las credenciales no son correctas");
 			request.setAttribute("usuario", usuario);
 			requestDispatcherLogin.forward(request, response);
+			usuario.setValido(false);
 			return;
 		}
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 

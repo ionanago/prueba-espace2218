@@ -15,6 +15,14 @@ body {
     margin: 0;
     height: 100%;
 }
+.Mopcion{
+	visibility: hidden;
+}
+#sfa:click{
+	.Mopcion{
+	visibility: hidden;
+	}
+	}
 
 /*BUTTON FILE*/
 

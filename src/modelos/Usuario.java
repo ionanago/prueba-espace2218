@@ -20,7 +20,7 @@ public class Usuario {
 			throw new ModeloException("No se admiten usuarios nulos");
 		}
 		if(usuario.trim().length() == 0) {
-			setErrorUser("No se admiten usuarios vacíos");
+			setErrorUser("No se admiten usuarios vacÃ­os");
 		}
 		this.usuario = usuario;
 	}
@@ -29,10 +29,10 @@ public class Usuario {
 	}
 	public void setPassword(String password) {
 		if(password == null) {
-			throw new ModeloException("No se admiten contraseñas nulas");
+			throw new ModeloException("No se admiten contraseÃ±as nulas");
 		}
 		if(password.trim().length() == 0) {
-			setErrorPass("No se admiten contraseñas vacías");
+			setErrorPass("No se admiten contraseï¿½as vacÃ­as");
 		}
 		this.password = password;
 	}

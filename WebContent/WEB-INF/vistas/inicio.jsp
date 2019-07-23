@@ -8,6 +8,7 @@
 </c:if>
 <c:choose>
 	<c:when test="${opcion == 'usuarios'}">
+	<style>.Mopcion{visibility:visible;}</style> 
 	 <table class="usuarios-table">
 	 	<thead>
 	 	<tr>
@@ -51,6 +52,7 @@
 	</div>
 	</c:when>
 		<c:when test="${opcion == 'productos'}">
+		<style>.Mopcion{visibility:visible;}</style> 
 		 <table class="usuarios-table">
 		 	<thead>
 		 	<tr>

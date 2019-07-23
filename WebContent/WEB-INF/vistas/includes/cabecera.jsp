@@ -15,6 +15,8 @@
 <body>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:if test="${usuario != null}">
-	<h1><a href="inicio"><i class="fas fa-cogs"></i></a><a>listado de ${opcion}</a><a class="logout" href="logout">Logout</a></h1>
+<c:if test="${usuario != null && usuario.isValido()}">
+	<h1><a href="inicio"><i class=" Mopcion fas fa-cogs"></i></a>
+	<a class="Mopcion">listado de ${opcion}</a>
+	<a class="logout" href="logout">Logout</a></h1>
 </c:if>
