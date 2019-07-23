@@ -4,7 +4,7 @@
 
 <div class="contenedor">
 <c:if test="${opcion != null}">
-	<h3><a href="#" data-toggle="modal" data-target="añadir" id="sfa"><i class="fas fa-plus fa-2x"></i></a></h3>
+	<h3><a href="#" data-toggle="modal" data-target="#añadir" id="sfa"><i class="fas fa-plus fa-2x"></i></a></h3>
 </c:if>
 <c:choose>
 	<c:when test="${opcion == 'usuarios'}">
@@ -22,7 +22,7 @@
 	 			<tr>
 		 			<td>${item.usuario}</td>
 		 			<td>${item.password}</td>
-		 			<td><a href="#"><i class="fas fa-edit"></i></a> <a href="#"> <i class="fas fa-trash"></i></a></td>
+		 			<td><a href="#" data-toggle="modal" data-target="#modificar"><i class="fas fa-edit"></i></a> <a href="#"> <i class="fas fa-trash"></i></a></td>
 	 			</tr>
     		</c:forEach>
 	 	</tbody>
@@ -34,13 +34,13 @@
 	
 	      <!-- Modal Header -->
 	      <div class="modal-header">
-	        <h4 class="modal-title">Modal Heading</h4>
+	        <h4 class="modal-title">Modificar Usuario</h4>
 	        <button type="button" class="close" data-dismiss="modal">&times;</button>
 	      </div>
 	
 	      <!-- Modal body -->
 	      <div class="modal-body">
-	        Modal body..
+	        le form mod user
 	      </div>
 	
 	      <!-- Modal footer -->
@@ -59,13 +59,13 @@
 	
 	      <!-- Modal Header -->
 	      <div class="modal-header">
-	        <h4 class="modal-title">Modal Heading</h4>
+	        <h4 class="modal-title">Añadir Usuario</h4>
 	        <button type="button" class="close" data-dismiss="modal">&times;</button>
 	      </div>
 	
 	      <!-- Modal body -->
 	      <div class="modal-body">
-	        Modal body..
+	        le form aña user
 	      </div>
 	
 	      <!-- Modal footer -->
@@ -96,7 +96,7 @@
 			 			<td>${item.nombre}</td>
 			 			<td>${item.codigo}</td>
 			 			<td>${item.precio}</td>
-			 			<td><a href="#"><i class="fas fa-edit"></i></a> <a href="#"> <i class="fas fa-trash"></i></a></td>
+			 			<td><a href="#" data-toggle="modal" data-target="#modificar"><i class="fas fa-edit"></i></a> <a href="#"> <i class="fas fa-trash"></i></a></td>
 		 			</tr>
 	    		</c:forEach>
 		 	</tbody>
@@ -108,13 +108,13 @@
 	
 	      <!-- Modal Header -->
 	      <div class="modal-header">
-	        <h4 class="modal-title">Modal Heading</h4>
+	        <h4 class="modal-title">Modificar Producto</h4>
 	        <button type="button" class="close" data-dismiss="modal">&times;</button>
 	      </div>
 	
 	      <!-- Modal body -->
 	      <div class="modal-body">
-	        Modal body..
+	        le formulario mod pro
 	      </div>
 	
 	      <!-- Modal footer -->
@@ -133,13 +133,13 @@
 	
 	      <!-- Modal Header -->
 	      <div class="modal-header">
-	        <h4 class="modal-title">Modal Heading</h4>
+	        <h4 class="modal-title">Añadir Producto</h4>
 	        <button type="button" class="close" data-dismiss="modal">&times;</button>
 	      </div>
 	
 	      <!-- Modal body -->
 	      <div class="modal-body">
-	        Modal body..
+	        le formulario aña pro
 	      </div>
 	
 	      <!-- Modal footer -->
