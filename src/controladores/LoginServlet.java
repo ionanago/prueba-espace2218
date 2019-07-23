@@ -52,7 +52,8 @@ public class LoginServlet extends HttpServlet {
 			// Redireccionar a un controlador
 			request.getSession().setAttribute("usuario", usuario);
 			String valusuario = usuario.getUsuario();
-			if (valusuario.equals("admin") ) {
+			//"^www.*.es"
+			if (valusuario.matches("^admin*") ) {
 				requestDispatcherPrincipal.forward(request, response);
 				usuario.setValido(true);
 				return;
