@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ejemplo JavaEE</title>
+<title>Ejemplo_JavaEE</title>
 <base href="${pageContext.request.contextPath}/">
 <link rel="stylesheet" href="css/login.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
