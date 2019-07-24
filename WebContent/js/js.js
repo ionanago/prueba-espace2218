@@ -76,7 +76,7 @@ $(function() {
 		}).fail(function(e) {
 		});
 	});
-};
+
 function editar(t,e) {
 	e.preventDefault();
 	var padre = $(t).parent().parent(), i = 1;
