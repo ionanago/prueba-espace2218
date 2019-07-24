@@ -144,7 +144,7 @@
 							<td>${item.codigo}</td>
 							<td>${item.precio}</td>
 							<td><a href="#" data-toggle="modal" data-target="#modificar"><i
-									class="fas fa-edit"></i></a> <a href="#"> <i
+									class="fas fa-edit"></i></a> <a href="BorrarProductoServlet" class="BorrarProductoServlet"> <i
 									class="fas fa-trash"></i></a></td>
 						</tr>
 					</c:forEach>
@@ -185,7 +185,30 @@
 						</div>
 
 						<!-- Modal body -->
-						<div class="modal-body">le formulario aña pro</div>
+						<div class="modal-body">
+						<form action="AñadirProductoServlet" method="post"
+								class="form-signin">
+								<h1 class="h3 mb-3 font-weight-normal">Introduce los datos</h1>
+								<label for="nombre" class="sr-only">nombre</label> 
+								<input
+									type="text" id="nombre" name="nombre" class="form-control"
+									placeholder="nombre" required autofocus> 
+									
+									<label for="codigo" class="sr-only">codigo</label> 
+								<input
+									type="text" id="codigo" name="codigo" class="form-control"
+									placeholder="codigo" required autofocus> 
+									
+									<label for="precio" class="sr-only">precio</label> 
+								<input
+									type="number" id="precio" name="precio" class="form-control"
+									placeholder="precio" required autofocus> 
+									
+
+								<button class="btn btn-lg btn-primary btn-block" type="submit">Añadir
+									Producto</button>
+
+							</form></div>
 
 						<!-- Modal footer -->
 						<div class="modal-footer">

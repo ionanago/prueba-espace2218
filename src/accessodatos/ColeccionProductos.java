@@ -4,6 +4,7 @@ import java.math.*;
 import java.util.*;
 
 import modelos.Producto;
+import modelos.Usuario;
 
 public class ColeccionProductos implements Crudable<Producto>{
 	public ColeccionProductos() {}
@@ -35,16 +36,22 @@ public class ColeccionProductos implements Crudable<Producto>{
 	}
 
 	@Override
-	public void insertar(Producto objeto) {
+	public  void insertar(Producto objeto) {
 		
 		
+	}
+	public static void insertar(long id, String nombre, String codigo, BigDecimal precio) {
+		productos.add(new Producto(id,nombre,codigo,precio));
 	}
 
+	
 	@Override
 	public void eliminar(Producto objeto) {
-		
+		if(getOne(objeto)){productos.remove(objeto);}
 		
 	}
+	public boolean getOne(Producto objeto) {
+		return productos.contains(objeto);}
 
 	@Override
 	public void modificar(Producto objeto) {

@@ -1,6 +1,8 @@
 package controladores;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,34 +11,30 @@ import javax.servlet.http.HttpServletResponse;
 import modelos.*;
 import negocio.*;
 import accessodatos.*;
-/**
- * Servlet implementation class BorrarProductoServlet
- */
+
 @WebServlet("/BorrarProductoServlet")
 public class BorrarProductoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public BorrarProductoServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+		Producto producto = new Producto(Long.valueOf((request.getParameter("id"))),request.getParameter("nombre"),request.getParameter("codigo"),BigDecimal.valueOf(Long.valueOf(request.getParameter("precio"))));
+		ColeccionProductos productos = ColeccionProductos.getInstance();
+		productos.eliminar(producto);
+		}
+		
+
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 
