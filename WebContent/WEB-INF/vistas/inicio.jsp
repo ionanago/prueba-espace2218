@@ -54,14 +54,14 @@
 								class="form-signin">
 								<h1 class="h3 mb-3 font-weight-normal">Modifique los datos</h1>
 								<div>
-									<label for="usuario" class="sr-only">Usuario</label> <input
-										type="text" id="usuario" name="usuario" class="form-control"
+									 <input
+										type="text" id="usuarioM" name="usuario" class="form-control"
 										placeholder="" autofocus>
 								</div>
 
 								<div>
-									<label for="password" class="sr-only"> contraseña </label> <input
-										type="password" id="password" name="password"
+									 <input
+										type="text" id="passwordM" name="password"
 										class="form-control" placeholder="" autofocus>
 								</div>
 

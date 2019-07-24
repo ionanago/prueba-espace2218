@@ -9,34 +9,31 @@ import javax.servlet.http.HttpServletResponse;
 import modelos.*;
 import negocio.*;
 import accessodatos.*;
-/**
- * Servlet implementation class ModificarUsuarioServlet
- */
+
 @WebServlet("/ModificarUsuarioServlet")
 public class ModificarUsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public ModificarUsuarioServlet() {
         super();
-        // TODO Auto-generated constructor stub
+       
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
+		Usuario usuarionuevo = new Usuario(request.getParameter("usuarionuevo"),request.getParameter("passwordnuevo"));		
+		Usuario usuario = new Usuario(request.getParameter("usuario"),request.getParameter("password"));
+		ColeccionUsuarios usuarios = ColeccionUsuarios.getInstance();
+		usuarios.modificar(usuario,usuarionuevo);
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 

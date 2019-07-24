@@ -21,7 +21,7 @@ public class BorrarUsuarioServlet extends HttpServlet {
 		
 		Usuario usuario = new Usuario(request.getParameter("usuario"),request.getParameter("password"));
 		ColeccionUsuarios usuarios = ColeccionUsuarios.getInstance();
-		usuarios.getOne(usuario);
+		usuarios.eliminar(usuario);
 		
 		
 	}

@@ -52,13 +52,25 @@ public class ColeccionUsuarios implements Crudable<Usuario> {
 	
 	public  void eliminar(Usuario usuario) {
 		
-		usuarios.remove(usuario);
+		if(getOne(usuario)){usuarios.remove(usuario);}
 		
 		
 	}
 	
 	@Override
-	public void modificar(Usuario usuario) {
+	public void modificar(Usuario usuario ,Usuario usuarionuevo) {
+		int indice = 0;
+		if(getOne(usuario)) {
+			
+			indice = usuarios.lastIndexOf(usuario);
+			usuarios.set(indice,usuarionuevo);
+			
+		}
+		
+	}
+
+	@Override
+	public void modificar(Usuario objeto) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -68,10 +80,10 @@ public class ColeccionUsuarios implements Crudable<Usuario> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public  void getOne(Usuario usuario) {
-		if(usuarios.contains(usuario)){eliminar(usuario);}
+	public boolean getOne(Usuario usuario) {
+		return usuarios.contains(usuario);
 		
-		
+	 	
 		
 	}
 
