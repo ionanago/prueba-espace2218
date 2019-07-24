@@ -69,6 +69,8 @@ function editar(t,e) {
 	var padre = $(t).parent().parent(), i = 1;
 	padre.find("td:not(:last-child)").each(function(){
 		$("#formMod:nth-child(" +i+ ") input").val($(this).html());
+		
+		console.log($("#formMod:nth-child(" +i+ ") input").val($(this).html()));
 		i++;
 	});
 };

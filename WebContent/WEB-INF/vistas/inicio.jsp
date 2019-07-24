@@ -143,7 +143,7 @@
 							<td>${item.nombre}</td>
 							<td>${item.codigo}</td>
 							<td>${item.precio}</td>
-							<td><a href="#" data-toggle="modal" data-target="#modificar" onclick="editar(this,event)"><i
+							<td><a href="#" onclick="editar(this,event)" data-toggle="modal" data-target="#modificar" ><i
 									class="fas fa-edit"></i></a> <a href="BorrarProductoServlet" class="BorrarProductoServlet"> <i
 									class="fas fa-trash"></i></a></td>
 						</tr>
@@ -167,31 +167,29 @@
 								class="form-signin">
 								<h1 class="h3 mb-3 font-weight-normal">Introduce los datos</h1>
 								<div>
-									<label for="nombre"
-										class="sr-only">
-										nombre
-									</label>
-									<input type="text" id="nombre"
+									
+									<input type="text" id="idm"
+										name="id" class="form-control" placeholder=""
+										 autofocus disabled="disabled">
+								</div>
+								
+								<div>
+									
+									<input type="text" id="nombrem"
 										name="nombre" class="form-control" placeholder=""
 										 autofocus>
 								</div>
 
 								<div>
-									<label for="codigo"
-										class="sr-only">
-										codigo
-									</label>
-									<input type="text" id="codigo"
+									
+									<input type="text" id="codigom"
 										name="codigo" class="form-control" placeholder=""
 										autofocus>
 								</div>
 
 								<div>
-									<label for="precio"
-										class="sr-only">
-										precio
-									</label>
-									<input type="number" id="precio"
+									
+									<input type="number" id="preciom"
 										name="precio" class="form-control" placeholder=""
 										 autofocus>
 								</div>
