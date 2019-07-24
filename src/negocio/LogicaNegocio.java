@@ -15,4 +15,8 @@ public class LogicaNegocio {
 	public static void deleteAttrs() {
 		
 	}
+	
+	
+	
+	
 }

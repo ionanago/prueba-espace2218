@@ -45,13 +45,18 @@ public class ColeccionUsuarios implements Crudable<Usuario> {
 		usuarios.add(usuario);
 		
 	}
-
-	@Override
-	public void eliminar(Usuario usuario) {
-		// TODO Auto-generated method stub
-		
+	public static void insertar( String usuario , String password) {
+		usuarios.add(new Usuario(usuario,password));
 	}
 
+	
+	public  void eliminar(Usuario usuario) {
+		
+		usuarios.remove(usuario);
+		
+		
+	}
+	
 	@Override
 	public void modificar(Usuario usuario) {
 		// TODO Auto-generated method stub
@@ -62,6 +67,12 @@ public class ColeccionUsuarios implements Crudable<Usuario> {
 	public Usuario getOne() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public  void getOne(Usuario usuario) {
+		if(usuarios.contains(usuario)){eliminar(usuario);}
+		
+		
+		
 	}
 
 	
