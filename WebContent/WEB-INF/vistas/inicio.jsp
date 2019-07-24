@@ -143,7 +143,7 @@
 							<td>${item.nombre}</td>
 							<td>${item.codigo}</td>
 							<td>${item.precio}</td>
-							<td><a href="#" data-toggle="modal" data-target="#modificar"><i
+							<td><a href="#" data-toggle="modal" data-target="#modificar" onclick="editar(this,event)"><i
 									class="fas fa-edit"></i></a> <a href="BorrarProductoServlet" class="BorrarProductoServlet"> <i
 									class="fas fa-trash"></i></a></td>
 						</tr>
@@ -162,7 +162,45 @@
 						</div>
 
 						<!-- Modal body -->
-						<div class="modal-body">le formulario mod pro</div>
+						<div class="modal-body">
+						<form action="ModificarProductoServlet" method="post"
+								class="form-signin">
+								<h1 class="h3 mb-3 font-weight-normal">Introduce los datos</h1>
+								<div>
+									<label for="nombre"
+										class="sr-only">
+										nombre
+									</label>
+									<input type="text" id="nombre"
+										name="nombre" class="form-control" placeholder=""
+										 autofocus>
+								</div>
+
+								<div>
+									<label for="codigo"
+										class="sr-only">
+										codigo
+									</label>
+									<input type="text" id="codigo"
+										name="codigo" class="form-control" placeholder=""
+										autofocus>
+								</div>
+
+								<div>
+									<label for="precio"
+										class="sr-only">
+										precio
+									</label>
+									<input type="number" id="precio"
+										name="precio" class="form-control" placeholder=""
+										 autofocus>
+								</div>
+
+
+								<button class="btn btn-lg btn-primary btn-block" type="submit">Modificar
+									Producto</button>
+
+							</form></div>
 
 						<!-- Modal footer -->
 						<div class="modal-footer">
