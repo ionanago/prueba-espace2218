@@ -163,34 +163,30 @@
 
 						<!-- Modal body -->
 						<div class="modal-body">
-						<form action="ModificarProductoServlet" method="post"
+						<form action="ModificarProductoServlet" id="formMod" method="post"
 								class="form-signin">
-								<h1 class="h3 mb-3 font-weight-normal">Introduce los datos</h1>
+								<h1 class="h3 mb-3 font-weight-normal">Modifique los datos</h1>
 								<div>
-									
 									<input type="text" id="idm"
-										name="id" class="form-control" placeholder=""
+										name="idm" class="form-control" placeholder=""
 										 autofocus disabled="disabled">
-								</div>
-								
+								</div>								
 								<div>
-									
 									<input type="text" id="nombrem"
-										name="nombre" class="form-control" placeholder=""
+										name="nombrem" class="form-control" placeholder=""
 										 autofocus>
 								</div>
-
 								<div>
 									
 									<input type="text" id="codigom"
-										name="codigo" class="form-control" placeholder=""
+										name="codigom" class="form-control" placeholder=""
 										autofocus>
 								</div>
 
 								<div>
 									
 									<input type="number" id="preciom"
-										name="precio" class="form-control" placeholder=""
+										name="preciom" class="form-control" placeholder=""
 										 autofocus>
 								</div>
 
