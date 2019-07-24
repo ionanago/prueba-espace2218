@@ -18,6 +18,7 @@ public class ColeccionUsuarios implements Crudable<Usuario> {
 			instancia = new ColeccionUsuarios();
 			usuarios.add(new Usuario("admin","admin"));
 			usuarios.add(new Usuario("usuario","usuario"));
+			usuarios.add(new Usuario("usuario2","2usuario"));
 		}
 		
 		return instancia;
