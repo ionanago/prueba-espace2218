@@ -51,5 +51,10 @@ public class ColeccionProductos implements Crudable<Producto>{
 		
 		
 	}
+	@Override
+	public void modificar(Producto objeto, Producto objetonuevo) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
