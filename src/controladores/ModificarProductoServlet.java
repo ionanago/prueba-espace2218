@@ -1,6 +1,8 @@
 package controladores;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +24,11 @@ public class ModificarProductoServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		response.getWriter().append("Served at: ").append(request.getContextPath()).append(" modificar producto ");
+		
+		Producto producto = new Producto(Long.valueOf((request.getParameter("id"))),request.getParameter("nombre"),request.getParameter("codigo"),BigDecimal.valueOf(Long.valueOf(request.getParameter("precio"))));
+		Producto productonuevo = new Producto(Long.valueOf((request.getParameter("idm"))),request.getParameter("nombrem"),request.getParameter("codigom"),BigDecimal.valueOf(Long.valueOf(request.getParameter("preciom"))));
+		ColeccionProductos productos = ColeccionProductos.getInstance();
+		productos.modificar(producto,productonuevo);
 	
 	}
 
