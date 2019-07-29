@@ -53,8 +53,8 @@ public class LoginServlet extends HttpServlet {
 			request.getSession().setAttribute("usuario", usuario);
 			String valusuario = usuario.getUsuario();
 			//"^www.*.es"
-			if (valusuario.matches("^admin*") ) {
-				requestDispatcherPrincipal.forward(request, response);
+			if (valusuario.matches("^admin*") ) {   	    		  
+				requestDispatcherPrincipal.forward(request, response);   
 				usuario.setValido(true);
 				return;
 			}

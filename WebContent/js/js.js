@@ -48,8 +48,8 @@ $(function() {
 		var password = padre.find("td:nth-child(2)").text();
 		if(usuario != "admin"){
 			$.post("ModificarUsuarioServlet", {
-			usuarionuevo : usuario,
-			passwordnuevo : password
+			usuario : usuario,
+			password : password
 		}).done(function(e) {
 			
 		}).fail(function(e) {
