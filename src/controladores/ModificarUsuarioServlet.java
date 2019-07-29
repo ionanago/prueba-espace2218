@@ -24,7 +24,7 @@ public class ModificarUsuarioServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		Usuario usuarionuevo = new Usuario(request.getParameter("usuarionuevo"),request.getParameter("passwordnuevo"));		
+		Usuario usuarionuevo = new Usuario(request.getParameter("usuarioM"),request.getParameter("passwordM"));		
 		Usuario usuario = new Usuario(request.getParameter("usuario"),request.getParameter("password"));
 		ColeccionUsuarios usuarios = ColeccionUsuarios.getInstance();
 		usuarios.modificar(usuario,usuarionuevo);

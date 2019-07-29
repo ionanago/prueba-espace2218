@@ -2,7 +2,7 @@ package controladores;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-
+import java.lang.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +26,7 @@ public class BorrarProductoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 
-		Producto producto = new Producto(Long.valueOf((request.getParameter("id"))),request.getParameter("nombre"),request.getParameter("codigo"),BigDecimal.valueOf(Long.valueOf(request.getParameter("precio"))));
+		Producto producto = new Producto(Long.parseLong(request.getParameter("id")),request.getParameter("nombre"),request.getParameter("codigo"),new BigDecimal( request.getParameter("precio")));
 		ColeccionProductos productos = ColeccionProductos.getInstance();
 		productos.eliminar(producto);
 		}

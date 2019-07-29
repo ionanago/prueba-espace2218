@@ -55,13 +55,13 @@
 								<h1 class="h3 mb-3 font-weight-normal">Modifique los datos</h1>
 								<div>
 									 <input
-										type="text" id="usuarioM" name="usuario" class="form-control"
+										type="text" id="usuarioM" name="usuarioM" class="form-control"
 										placeholder="" autofocus>
 								</div>
 
 								<div>
 									 <input
-										type="text" id="passwordM" name="password"
+										type="text" id="passwordM" name="passwordM"
 										class="form-control" placeholder="" autofocus>
 								</div>
 

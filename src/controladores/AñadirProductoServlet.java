@@ -28,10 +28,10 @@ public class AñadirProductoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		final RequestDispatcher requestDispatcherPrincipal = request.getRequestDispatcher(VISTAS_PRINCIPAL_JSP);
-		long id = Long.valueOf(request.getParameter("id"));
+		long id = Long.parseLong(request.getParameter("id"));
 		String nombre = request.getParameter("nombre");
 		String codigo = request.getParameter("codigo");
-		BigDecimal precio = BigDecimal.valueOf(Long.valueOf(request.getParameter("precio")));
+		BigDecimal precio = new BigDecimal( request.getParameter("precio"));
 		ColeccionProductos.insertar(id, nombre, codigo, precio);
 		
 		
